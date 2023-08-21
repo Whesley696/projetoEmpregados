@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perguntas sobre Funcionários</title>
+</head>
+<body>
+  <h1>Perguntas sobre Funcionários</h1>
+
+  <!-- Quem ganha o maior salário -->
+  <h2>Quem ganha o maior salário?</h2>
+  <p id="highestSalary">{{highestSalary}}</p>
+
+  <!-- Quem ganha o menor salário -->
+  <h2>Quem ganha o menor salário?</h2>
+  <p id="lowestSalary">{{lowestSalary}}</p>
+
+  <!-- Pesquisar nome por pedaço de nome -->
+  <h2>Pesquisar nome por pedaço de nome</h2>
+  <form action="/search" method="get">
+    <input type="text" name="name" placeholder="Digite um pedaço do nome">
+    <button type="submit">Pesquisar</button>
+  </form>
+  <ul>
+    {{#each searchResults}}
+      <li>{{this.nome}}</li>
+    {{/each}}
+  </ul>
+
+  <!-- Classificar pelo setor de trabalho -->
+  <h2>Classificar pelo setor de trabalho</h2>
+  <ul>
+    {{#each sortedByDepartment}}
+      <li>{{this.nome}}: {{this.count}} funcionários</li>
+    {{/each}}
+  </ul>
+
+  <!-- Quantos trabalham no setor administrativo? -->
+  <h2>Quantos trabalham no setor administrativo?</h2>
+  <p id="adminCount">{{adminCount}} funcionários</p>
+</body>
+</html>

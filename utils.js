@@ -1,5 +1,5 @@
 // utils.js
-function calculateIRPF(salary) {
+function calculateIRF(salary) {
     if (salary <= 1903.98) {
       return 0;
     } else if (salary <= 2826.65) {
@@ -13,5 +13,5 @@ function calculateIRPF(salary) {
     }
   }
   
-  module.exports = { calculateIRPF };
+  module.exports = { calculateIRF };
   

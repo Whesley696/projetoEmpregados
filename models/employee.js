@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Employee = sequelize.define('Employee', {
+  const empregado = sequelize.define('empregado', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -17,7 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     }
-  });
 
-  return Employee;
+  });
+  empregado.sync ({force:true})
+  return empregado;
 };
